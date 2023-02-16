@@ -2,7 +2,7 @@
 
 /**
  * main - A C program that prints exactly some lines of words
- * return: 0 (success);
+ * Return: Always 0 (success)
 */
 
 int main(void)
