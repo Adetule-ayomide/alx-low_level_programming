@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /**
- * main-a C program that prints exactly some lines of words
+ * main - A C program that prints exactly some lines of words
  * return: 0 (success)
 */
 
