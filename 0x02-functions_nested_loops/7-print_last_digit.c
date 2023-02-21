@@ -1,19 +1,24 @@
-#include "main.h"
+vi 7-print_last_digit.c
 
+#include "main.h"
 /**
- * print_last_digit - prints the last digit of a number in the task
- * @n: n is the value to be printed
- * Return: value of the last number
+ * print_last_digit-prints the last digit of an interger.
+ * @a:number to compute last digit.
+ * Return:last digit.
  */
 
-int print_last_digit(int n)
+
+
+int print_last_digit(int a)
 {
-	int ln = (n % 10);
+	int last_digit;
 
-	if (ln < 0)
-		ln *= -1;
+	last_digit = a %  10;
+	if (last_digit < 0)
+	{
+		last_digit = last_digit * -1;
+	}
+	_putchar(last_digit + '0');
+	return (last_digit);
 
-	_putchar(ln + '0');
-
-	return (0);
 }
