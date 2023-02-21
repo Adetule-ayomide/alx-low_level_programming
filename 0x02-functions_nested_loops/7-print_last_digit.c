@@ -1,5 +1,3 @@
-vi 7-print_last_digit.c
-
 #include "main.h"
 /**
  * print_last_digit-prints the last digit of an interger.
