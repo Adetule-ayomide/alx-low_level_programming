@@ -16,12 +16,13 @@ void rev_string(char *n)
 		i++;
 	}
 	i--;
-		for (j = 0; j < i; j++, i--)
-		{
-			temp = *(n + j);
-			*(n + j) = *(n + i);
-			*(n + i) = temp;
-		}
+
+	for (j = 0; j < i; j++, i--)
+	{
+		temp = *(n + j);
+		*(n + j) = *(n + i);
+		*(n + i) = temp;
+	}
 }
 
 /**
@@ -39,14 +40,12 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 
 	while (*(n1 + i) != '\0')
 		i++;
-
 	while (*(n2 + j) != '\0')
 		j++;
-		i--;
-		j--;
+	i--;
+	j--;
 	if (j >= size_r || i >= size_r)
-	return (0);
-
+		return (0);
 	while (j >= 0 || i >= 0 || overflow == 1)
 	{
 		if (i < 0)
