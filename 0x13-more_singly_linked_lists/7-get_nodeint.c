@@ -3,6 +3,7 @@
 /**
  * get_nodeint_at_index - Struct node variable in a prototype
  * @head: A pointer
+ * @index: number of index
  * Return: head
  */
 
