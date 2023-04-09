@@ -1,4 +1,4 @@
-#include "main.hi"
+#include "main.h"
 
 /**
  * print_binary - The prototype that prints the binary representation
