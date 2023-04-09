@@ -4,7 +4,7 @@
  * get_bit - Returns the value of a bit at a given index
  * @n: integer
  * @index: position of the integer to be move
- * Return: -1 if failed and bit if success
+ * Return: -1 if failed and cal if success
  */
 
 int get_bit(unsigned long int n, unsigned int index)
@@ -13,8 +13,10 @@ int get_bit(unsigned long int n, unsigned int index)
 	{
 		return (-1);
 	}
-	unsigned long int bit = n >> index;
+	unsigned long int cal;
 
-	bit &= 1;
-	return (bit);
+	cal = n >> index;
+
+	cal &= 1;
+	return (cal);
 }
