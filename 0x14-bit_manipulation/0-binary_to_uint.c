@@ -1,9 +1,11 @@
 #include "main.h"
+
 /**
  * binary_to_uint - The prototype which convert binary to unsigned integer
  * @b: A pointer
  * Return: Integer if success or 0 if failed
  */
+
 unsigned int binary_to_uint(const char *b)
 {
 	unsigned int integer = 0;
@@ -28,5 +30,6 @@ unsigned int binary_to_uint(const char *b)
 		}
 		b++;
 	}
+	
 	return (integer);
 }
