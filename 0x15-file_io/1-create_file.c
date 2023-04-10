@@ -10,9 +10,12 @@
 int create_file(const char *filename, char *text_content)
 {
 	int i = 0;
-	int fd = open(filename, O_CREAT | O_RDWR | O_TRUNC, 0600);
 
-	if (fd == -1)
+	int write_func;
+
+	int fc = open(filename, O_CREAT | O_RDWR | O_TRUNC, 0600);
+
+	if (fc == -1)
 	{
 		return (-1);
 	}
@@ -27,14 +30,14 @@ int create_file(const char *filename, char *text_content)
 		i++;
 	}
 
-	int write_fn = write(fd, text_content, i);
+	write_func = write(fc, text_content, i);
 
-	if (write_fn == -1)
+	if (write_func == -1)
 	{
 		return (-1);
 	}
 
-	close(fd);
+	close(fc);
 
 	return (1);
 }
