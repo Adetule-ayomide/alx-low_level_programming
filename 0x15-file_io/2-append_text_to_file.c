@@ -23,10 +23,10 @@ int append_text_to_file(const char *filename, char *text_content)
 
 	if (text_content != NULL)
 	{
-		for (c = 0; text_content[i]; i++)
+		for (c = 0; text_content[c]; c++)
 		;
 
-		write_func = write(fc, text_content, i);
+		write_func = write(fc, text_content, c);
 		if (write_func == -1)
 		{
 			return (-1);
