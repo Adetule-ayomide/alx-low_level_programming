@@ -68,9 +68,7 @@ int main(int argc, char *argv[])
 		{
 			error_checks(file_to, file_from, argv);
 		}
-		
-		write_to = write(file_to, buf, read_f);
-		
+		write_to = write(file_to, buf, read_f);	
 		if (write_to == -1)
 		{
 			error_checks(file_to, file_from, argv);
