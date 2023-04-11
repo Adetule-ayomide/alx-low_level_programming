@@ -7,7 +7,7 @@
 int get_endianness(void)
 {
 	unsigned int check = 1;
-	char *dian = (char *)check;
+	char *dian = (char *)&check;
 
 	return (*dian == 1);
 }
