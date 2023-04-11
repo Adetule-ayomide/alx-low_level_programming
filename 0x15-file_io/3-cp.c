@@ -1,4 +1,8 @@
 #include "main.h"
+
+void error_close(int err_to, int err_from);
+void error_checks(int file_to, int file_from, char *argv[]);
+
 /**
  * error_close - check closing errors
  * @err_to: file to copy into
