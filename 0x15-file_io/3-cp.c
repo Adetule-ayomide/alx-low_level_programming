@@ -62,7 +62,6 @@ int main(int argc, char *argv[])
 	while (read_f == 1024)
 	{
 		read_f = read(file_from, buf, 1024);
-
 		if (read_f == -1)
 		{
 			error_checks(file_to, file_from, argv);
