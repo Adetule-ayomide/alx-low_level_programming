@@ -59,7 +59,6 @@ int main(int argc, char *argv[])
 	file_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC | O_APPEND, 0664);
 	error_checks(file_to, file_from, argv);
 	read_f = 1024;
-
 	while (read_f == 1024)
 	{
 		read_f = read(file_from, buf, 1024);
@@ -78,7 +77,6 @@ int main(int argc, char *argv[])
 	{
 		error_checks(file_to, file_from, argv);
 	}
-
 	err_from = close(file_from);
 	err_to = close(file_to);
 	error_close(err_to, err_from);
