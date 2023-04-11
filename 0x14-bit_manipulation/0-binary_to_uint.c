@@ -6,25 +6,28 @@
  */
 unsigned int binary_to_uint(const char *b)
 {
-	unsigned int integer = 0;
+        unsigned integer = 0;
+        int length, binary;
 
-	if (*b == '\0')
-		return (0);
+        if (!b)
+                return (0);
 
-	while (*b != '\0')
-	{
-		if (*b == '0')
-		{
-			integer = integer * 2;
-		}
-		else if (*b == '1')
-		{
-			integer = ((integer * 2) + 1);
-		}
-		else
-			return (0);
+        for (length = 0; b[length] != '\0'; len++)
+                ;
 
-		b++;
-	}
-	return (integer);
+        for (length--, binary = 1; length >= 0; length--, binary *= 2)
+        {
+                if (b[length] != '0' && b[length] != '1')
+                {
+                        return (0);
+                }
+
+                if (b[length] & 1)
+                {
+			integer += binary;
+                }
+        }
+
+        return (integer);
 }
+
