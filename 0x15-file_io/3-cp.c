@@ -1,8 +1,4 @@
 #include "main.h"
-
-void error_close(int err_to, int err_from);
-void error_checks(int file_to, int file_from, char *argv[]);
-
 /**
  * error_close - check closing errors
  * @err_to: file to copy into
@@ -16,11 +12,11 @@ void error_close(int err_to, int err_from)
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", err_to);
 		exit(100);
 	}
-	if (err_from == -1)
+	/**if (err_from == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", err_from);
 		exit(100);
-	}
+	}*/
 }
 /**
  * error_checks - check opening errors
