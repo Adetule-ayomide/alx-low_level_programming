@@ -12,11 +12,11 @@ void error_close(int err_to, int err_from)
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", err_to);
 		exit(100);
 	}
-	/**if (err_from == -1)
+	if (err_from == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", err_from);
 		exit(100);
-	}*/
+	}
 }
 /**
  * error_checks - check opening errors
