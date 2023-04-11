@@ -84,6 +84,5 @@ int main(int argc, char *argv[])
 	err_from = close(file_from);
 	err_to = close(file_to);
 	error_close(err_to, err_from);
-	
 	return (0);
 }
