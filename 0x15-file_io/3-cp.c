@@ -63,11 +63,14 @@ int main(int argc, char *argv[])
 	while (read_f == 1024)
 	{
 		read_f = read(file_from, buf, 1024);
+
 		if (read_f == -1)
 		{
 			error_checks(file_to, file_from, argv);
 		}
+		
 		write_to = write(file_to, buf, read_f);
+		
 		if (write_to == -1)
 		{
 			error_checks(file_to, file_from, argv);
@@ -77,8 +80,10 @@ int main(int argc, char *argv[])
 	{
 		error_checks(file_to, file_from, argv);
 	}
+
 	err_from = close(file_from);
 	err_to = close(file_to);
 	error_close(err_to, err_from);
+	
 	return (0);
 }
