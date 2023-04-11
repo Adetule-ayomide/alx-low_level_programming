@@ -59,6 +59,7 @@ int main(int argc, char *argv[])
 	file_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC | O_APPEND, 0664);
 	error_checks(file_to, file_from, argv);
 	read_f = 1024;
+
 	while (read_f == 1024)
 	{
 		read_f = read(file_from, buf, 1024);
