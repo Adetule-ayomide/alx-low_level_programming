@@ -24,7 +24,7 @@ void close_elf(int elf);
 void print_magic(unsigned char *e_ident)
 {
 	int i;
-	
+
 	printf("Magic:   ");
 	
 	for (i = 0; i < EI_NIDENT; i++)
@@ -114,25 +114,25 @@ void print_osabi(unsigned char *e_ident)
 			printf("UNIX - System V\n");
 				break;
 		case ELFOSABI_HPUX:
-			printf("HP-UX\n");
+			printf("UNIX - HP-UX\n");
 			break;
 		case ELFOSABI_NETBSD:
-			printf("NetBSD\n");
+			printf("UNIX - NetBSD\n");
 			break;
 		case ELFOSABI_LINUX:
-			printf("Linux\n");
+			printf("UNIX - Linux\n");
 			break;
 		case ELFOSABI_SOLARIS:
 			printf("UNIX - Solaris\n");
 			break;
 		case ELFOSABI_IRIX:
-			printf("IRIX\n");
+			printf("UNIX - IRIX\n");
 			break;
 		case ELFOSABI_FREEBSD:
-			printf("FreeBSD\n");
+			printf("UNIX - FreeBSD\n");
 			break;
 		case ELFOSABI_TRU64:
-			printf("TRU64 UNIX\n");
+			printf("UNIX - TRU64\n");
 			break;
 		case ELFOSABI_ARM:
 			printf("ARM architecture\n");
@@ -141,7 +141,7 @@ void print_osabi(unsigned char *e_ident)
 			printf("Standalone (embedded) application\n");
 			break;
 		default:
-			printf("<unknown>\n");
+			printf("<unknown: %x>\n", e_ident[EI_OSABI]);
 			break;
 	}
 }
