@@ -26,7 +26,7 @@ void print_magic(unsigned char *e_ident)
 	int i;
 
 	printf("Magic:   ");
-	
+
 	for (i = 0; i < EI_NIDENT; i++)
 	{
 		printf("%02x ", e_ident[i]);
@@ -185,7 +185,7 @@ void print_type(unsigned int e_type, unsigned char *e_ident)
 			printf("CORE (Core file)\n");
 			break;
 		default:
-			printf("<unknown>\n");
+			printf("<unknown: %x>\n", e_type);
 			break;
 	}
 }
