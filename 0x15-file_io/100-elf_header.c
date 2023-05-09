@@ -3,8 +3,6 @@
 #include <fcntl.h>
 #include <unistd.h>
 #include <elf.h>
-#include <sys/types.h>
-#include <sys/stat.h>
 
 void check_elf(unsigned char *e_ident);
 void print_magic(unsigned char *e_ident);
@@ -56,7 +54,7 @@ void print_class(unsigned char *e_ident)
 		printf("ELF64\n");
 		break;
 	default:
-		printf("<unknown>\n");
+		printf("<unknown: %x>\n", e_ident[EI_CLASS]);
 		break;
 	}
 }
@@ -78,7 +76,7 @@ void print_data(unsigned char *e_ident)
 		printf("2's complement, big endian\n");
 		break;
 	default:
-		printf("<unknown>\n");
+		printf("<unknown: %x>\n", e_ident[EI_CLASS]);
 		break;
 	}
 }
@@ -125,7 +123,7 @@ void print_osabi(unsigned char *e_ident)
 			printf("Linux\n");
 			break;
 		case ELFOSABI_SOLARIS:
-			printf("Solaris\n");
+			printf("UNIX - Solaris\n");
 			break;
 		case ELFOSABI_IRIX:
 			printf("IRIX\n");
