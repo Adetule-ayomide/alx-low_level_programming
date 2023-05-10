@@ -64,12 +64,14 @@ int main(int argc, char *argv[])
 		read_f = read(file_from, buf, 1024);
 		if (read_f == -1)
 		{
-			error_checks(file_to, file_from, argv);
+			dprintf(STDERR_FILENO, "Error: can't read from file %s\n", argv[1]);
+			exit(98);
 		}
 		write_to = write(file_to, buf, read_f);
 		if (write_to == -1)
 		{
-			error_checks(file_to, file_from, argv);
+			dprintf(STDERR_FILENO, "Error: can't write to file %s\n", argv[1]);
+                        exit(99);
 		}
 	}
 	if (file_to == -1)
