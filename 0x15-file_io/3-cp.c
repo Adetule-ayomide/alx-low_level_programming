@@ -46,7 +46,7 @@ void error_checks(int file_to, int file_from, char *argv[])
  */
 int main(int argc, char *argv[])
 {
-	int err_from, err_to, file_from, file_to;
+	int file_from, file_to;
 	char buf[1024];
 	ssize_t read_f, write_to;
 
