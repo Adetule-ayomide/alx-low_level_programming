@@ -1,23 +1,5 @@
 #include "main.h"
-/**
- * error_close - check closing errors
- * @err_to: file to copy into
- * @err_from: file to copy from
- * Return: nothing
- */
-void error_close(int err_to, int err_from)
-{
-	if (err_to == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", err_to);
-		exit(100);
-	}
-	if (err_from == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", err_from);
-		exit(100);
-	}
-}
+
 /**
  * error_checks - check opening errors
  * @file_to: file to copy into
@@ -38,6 +20,7 @@ void error_checks(int file_to, int file_from, char *argv[])
 		exit(98);
 	}
 }
+
 /**
  * main - starting point
  * @argc: argument count
@@ -75,6 +58,16 @@ int main(int argc, char *argv[])
 		}
 
 	}
+	if (err_to == -1)
+        {
+                dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", err_to);
+                exit(100);
+        }
+        if (err_from == -1)
+        {
+                dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", err_from);
+                exit(100);
+        }
 
 	return (0);
 }
