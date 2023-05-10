@@ -1,12 +1,12 @@
 #include "main.h"
 /**
- * check_errors - check opening errors
+ * error_checks - check opening errors
  * @file_to: file to copy into
  * @file_from: file to copy from
  * @argv: argument vector
  * Return: nothing
  */
-void check_errors(int file_to, int file_from, char *argv[])
+void error_checks(int file_to, int file_from, char *argv[])
 {
 	if (file_to == -1)
 	{
@@ -38,7 +38,7 @@ int main(int argc, char *argv[])
 	}
 	file_from = open(argv[1], O_RDONLY);
 	file_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC | O_APPEND, 0664);
-	check_errors(file_to, file_from, argv);
+	error_checks(file_to, file_from, argv);
 	read_f = 1024;
 	while (read_f == 1024)
 	{
