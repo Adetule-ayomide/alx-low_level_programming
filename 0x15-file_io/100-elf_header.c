@@ -3,6 +3,8 @@
 #include <fcntl.h>
 #include <unistd.h>
 #include <elf.h>
+#include <sys/types.h>
+#include <sys/stat.h>
 
 void check_elf(unsigned char *e_ident);
 void print_magic(unsigned char *e_ident);
