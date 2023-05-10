@@ -27,11 +27,11 @@ void print_magic(unsigned char *e_ident)
 
 	printf("Magic:   ");
 
-	for (check_it = 0; i < EI_NIDENT; check_it++)
+	for (check_it = 0; check_it < EI_NIDENT; check_it++)
 	{
 		printf("%02x ", e_ident[check_it]);
 
-		if (checker == EI_NIDENT - 1)
+		if (check_it == EI_NIDENT - 1)
 			printf("\n");
 		else
 			printf(" ");
