@@ -3,10 +3,7 @@
 #include <fcntl.h>
 #include <unistd.h>
 #include <elf.h>
-#include <sys/types.h>
-#include <sys/stat.h>
 
-void check_elf(unsigned char *e_ident);
 void print_magic(unsigned char *e_ident);
 void print_class(unsigned char *e_ident);
 void print_data(unsigned char *e_ident);
@@ -127,22 +124,22 @@ void print_osabi(unsigned char *e_ident)
 			printf("UNIX - HP-UX\n");
 			break;
 		case ELFOSABI_NETBSD:
-			printf("UNIX - NetBSD\n");
+			printf("NetBSD\n");
 			break;
 		case ELFOSABI_LINUX:
-			printf("UNIX - Linux\n");
+			printf("Linux\n");
 			break;
 		case ELFOSABI_SOLARIS:
-			printf("UNIX - Solaris\n");
+			printf("Solaris\n");
 			break;
 		case ELFOSABI_IRIX:
-			printf("UNIX - IRIX\n");
+			printf("IRIX\n");
 			break;
 		case ELFOSABI_FREEBSD:
-			printf("UNIX - FreeBSD\n");
+			printf("FreeBSD\n");
 			break;
 		case ELFOSABI_TRU64:
-			printf("UNIX - TRU64\n");
+			printf("TRU64\n");
 			break;
 		case ELFOSABI_ARM:
 			printf("ARM architecture\n");
@@ -206,22 +203,22 @@ void print_type(unsigned int e_type, unsigned char *e_ident)
 * @e_entry: The address of the ELF entry point.
 * @e_ident: A pointer to an array containing the ELF class.
 */
-void print_entry(unsigned long int e_entry, unsigned char *e_ident)
+void print_entry(unsigned long int elf_entry, unsigned char *e_ident)
 {
 	printf("Entry point address:               ");
 
 	if (e_ident[EI_DATA] == ELFDATA2MSB)
 	{
-		e_entry = ((e_entry << 8) & 0xFF00FF00) |
-		((e_entry >> 8) & 0xFF00FF);
-		e_entry = (e_entry << 16) | (e_entry >> 16);
+		elf_entry = ((elf_entry << 8) & 0xFF00FF00) |
+		((elf_entry >> 8) & 0xFF00FF);
+		elf_entry = (elf_entry << 16) | (elf_entry >> 16);
 	}
 
 	if (e_ident[EI_CLASS] == ELFCLASS32)
-		printf("%#x\n", (unsigned int)e_entry);
+		printf("%#x\n", (unsigned int)elf_entry);
 
 	else
-		printf("%#lx\n", e_entry);
+		printf("%#lx\n", elf_entry);
 }
 
 /**
