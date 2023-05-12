@@ -20,9 +20,9 @@ void error_checks(int file_to, int file_from, char *argv[])
 	}
 }
 /**
- * main - starting point
- * @argc: argument count
- * @argv: argument vector
+ * main - The starting point
+ * @argc: The argument count
+ * @argv: The argument vector
  * Return: 0
  */
 int main(int argc, char *argv[])
