@@ -124,22 +124,22 @@ void print_osabi(unsigned char *e_ident)
 			printf("UNIX - HP-UX\n");
 			break;
 		case ELFOSABI_NETBSD:
-			printf("NetBSD\n");
+			printf("UNIX - NetBSD\n");
 			break;
 		case ELFOSABI_LINUX:
-			printf("Linux\n");
+			printf("UNIX - Linux\n");
 			break;
 		case ELFOSABI_SOLARIS:
-			printf("Solaris\n");
+			printf("UNIX - Solaris\n");
 			break;
 		case ELFOSABI_IRIX:
-			printf("IRIX\n");
+			printf("UNIX - IRIX\n");
 			break;
 		case ELFOSABI_FREEBSD:
-			printf("FreeBSD\n");
+			printf("UNIX - FreeBSD\n");
 			break;
 		case ELFOSABI_TRU64:
-			printf("TRU64\n");
+			printf("UNIX - TRU64\n");
 			break;
 		case ELFOSABI_ARM:
 			printf("ARM architecture\n");
@@ -174,29 +174,29 @@ void print_type(unsigned int e_type, unsigned char *e_ident)
 	if (e_ident[EI_DATA] == ELFDATA2MSB)
 		e_type >>= 8;
 
-	printf("Type:                              ");
 	switch (e_type)
 	{
-		case ET_NONE:
-			printf("NONE (None)\n");
+		case 0:
+			printf("No file type\n");
 			break;
-		case ET_REL:
-			printf("REL (Relocatable file)\n");
+		case 1:
+			printf("Relocatable file\n");
 			break;
-		case ET_EXEC:
-			printf("EXEC (Executable file)\n");
+		case 2:
+			printf("Executable file\n");
 			break;
-		case ET_DYN:
-			printf("DYN (Shared object file)\n");
+		case 3:
+			printf("Shared object file\n");
 			break;
-		case ET_CORE:
-			printf("CORE (Core file)\n");
+		case 4:
+			printf("Core file\n");
 			break;
 		default:
-			printf("<unknown: %x>\n", e_type);
+			printf("Unknown file type\n");
 			break;
 	}
 }
+
 
 /**
 * print_entry - Prints the entry point of an ELF header.
