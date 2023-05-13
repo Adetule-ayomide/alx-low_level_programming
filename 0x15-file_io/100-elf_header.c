@@ -174,25 +174,26 @@ void print_type(unsigned int e_type, unsigned char *e_ident)
 	if (e_ident[EI_DATA] == ELFDATA2MSB)
 		e_type >>= 8;
 
+	printf("Type:			");
 	switch (e_type)
 	{
-		case 0:
+		case ET_NONE:
 			printf("No file type\n");
 			break;
-		case 1:
+		case ET_REL:
 			printf("Relocatable file\n");
 			break;
-		case 2:
+		case ET_EXEC:
 			printf("Executable file\n");
 			break;
-		case 3:
+		case ET_DYN:
 			printf("Shared object file\n");
 			break;
-		case 4:
+		case ET_CORE:
 			printf("Core file\n");
 			break;
 		default:
-			printf("Unknown file type\n");
+			printf("Unknown file type: %x>\n", e_type);
 			break;
 	}
 }
