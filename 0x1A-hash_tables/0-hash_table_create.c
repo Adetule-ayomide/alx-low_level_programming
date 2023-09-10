@@ -4,11 +4,12 @@
  * @size: The size of the array.
  *
  * Return: A pointer to the newly created hash table
- * or NULL if an error occurs
+ * or If something went wrong, the function should return NULL
  */
 
 hash_table_t *hash_table_create(unsigned long int size)
 {
+
 	hash_table_t *new_table = {NULL};
 
 	new_table = malloc(sizeof(hash_table_t));
